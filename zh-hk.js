@@ -1,7 +1,9 @@
 //! moment.js locale configuration
-//! locale : Chinese (Taiwan) [zh-tw]
+//! locale : Chinese (Hong Kong) [zh-hk]
 //! author : Ben : https://github.com/ben-lin
 //! author : Chris Lam : https://github.com/hehachris
+//! author : Konstantin : https://github.com/skfd
+//! author : Anthony : https://github.com/anthonylau
 
 ;(function (global, factory) {
    typeof exports === 'object' && typeof module !== 'undefined'
@@ -12,7 +14,7 @@
 
     //! moment.js locale configuration
 
-    var zhTw = moment.defineLocale('zh-tw', {
+    var zhHk = moment.defineLocale('zh-hk', {
         months: '一月_二月_三月_四月_五月_六月_七月_八月_九月_十月_十一月_十二月'.split(
             '_'
         ),
@@ -53,9 +55,9 @@
                 return '凌晨';
             } else if (hm < 900) {
                 return '早上';
-            } else if (hm < 1130) {
+            } else if (hm < 1200) {
                 return '上午';
-            } else if (hm < 1230) {
+            } else if (hm === 1200) {
                 return '中午';
             } else if (hm < 1800) {
                 return '下午';
@@ -64,11 +66,11 @@
             }
         },
         calendar: {
-            sameDay: '[今天] LT',
-            nextDay: '[明天] LT',
-            nextWeek: '[下]dddd LT',
-            lastDay: '[昨天] LT',
-            lastWeek: '[上]dddd LT',
+            sameDay: '[今天]LT',
+            nextDay: '[明天]LT',
+            nextWeek: '[下]ddddLT',
+            lastDay: '[昨天]LT',
+            lastWeek: '[上]ddddLT',
             sameElse: 'L',
         },
         dayOfMonthOrdinalParse: /\d{1,2}(日|月|週)/,
@@ -105,6 +107,6 @@
         },
     });
 
-    return zhTw;
+    return zhHk;
 
 })));
